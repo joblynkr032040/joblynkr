@@ -7,14 +7,14 @@ import { motion } from 'framer-motion';
 
 const faqs = [
   {
-    question: "What exactly does Joblinkr do?",
+    question: "What exactly does JobLynkr do?",
     answer:
       "We help students from various countries build their personal brand to land global job opportunities. That includes resume creation, LinkedIn optimization, project portfolios, mock interviews, and even job applications — all done-for-you.",
   },
   {
-  question: "How is Joblinkr different from a typical service?",
-  answer:
-    "Joblinkr offers a holistic approach to personal branding and job readiness. Unlike typical services that focus solely on resume formatting, we enhance your entire professional profile. This includes creating tailored resumes and cover letters, optimizing your LinkedIn presence, building custom projects for your portfolio, and even applying to jobs on your behalf. Additionally, our premium plans operate on a success-based model, ensuring you only pay extra when you start receiving interview calls.",
+    question: "How is JobLynkr different from a typical service?",
+    answer:
+      "JobLynkr offers a holistic approach to personal branding and job readiness. Unlike typical services that focus solely on resume formatting, we enhance your entire professional profile. This includes creating tailored resumes and cover letters, optimizing your LinkedIn presence, building custom projects for your portfolio, and even applying to jobs on your behalf. Additionally, our premium plans operate on a success-based model, ensuring you only pay extra when you start receiving interview calls.",
   },
   {
     question: "Do I need coding skills to work with you?",
@@ -31,11 +31,11 @@ const faqs = [
     answer:
       "Click the “Get Started” or “Book Free Consultation” button, and we’ll schedule a call to understand your goals, evaluate your current profile, and suggest the best plan.",
   },
-{
-  question: "What’s included in the Standard Plan?",
-  answer:
-    "The Standard Plan is designed to give job seekers a strong foundation to stand out. It includes:\n\n- Resume building: A professionally crafted resume tailored to your career goals.\n- Cover letter: A personalized cover letter that highlights your skills and achievements.\n- Mock interviews: Three mock interview sessions to improve your communication skills and confidence.\n- Portfolio website: A custom-built portfolio to showcase your work and achievements.\n- Projects for resume: Creation of relevant projects, if needed, to enhance your professional profile (additional charges apply).\n- Comprehensive support: Everything required to make your profile interview-ready and catch the attention of recruiters.",
-},
+  {
+    question: "What’s included in the Standard Plan?",
+    answer:
+      "The Standard Plan is designed to give job seekers a strong foundation to stand out. It includes:\n\n- Resume building: A professionally crafted resume tailored to your career goals.\n- Cover letter: A personalized cover letter that highlights your skills and achievements.\n- Mock interviews: Three mock interview sessions to improve your communication skills and confidence.\n- Portfolio website: A custom-built portfolio to showcase your work and achievements.\n- Projects for resume: Creation of relevant projects, if needed, to enhance your professional profile (additional charges apply).\n- Comprehensive support: Everything required to make your profile interview-ready and catch the attention of recruiters.",
+  },
   {
     question: "What’s different in the Premium Plan?",
     answer:
@@ -52,6 +52,7 @@ const faqs = [
       "We keep it simple:\n\n- Standard Plan is a one-time fee.\n- Premium Plan includes a performance-based fee per interview.\n- Project Plan is priced per project level.\n\nWe’ll always explain everything clearly before you pay.",
   },
 ];
+
 
 
 const FaqSection = () => {

@@ -7,7 +7,7 @@ const BlueBox = () => {
 
       {/* Heading */}
       <h2 className="text-4xl sm:text-5xl font-bold text-white text-center">
-        How<span className="text-[#5F7CFF] italic"> JobLinkr </span>Works Behind the Scenes?
+        How<span className="text-[#5F7CFF] italic"> JobLynkr </span>Works Behind the Scenes?
       </h2>
 
       {/* Image Section */}

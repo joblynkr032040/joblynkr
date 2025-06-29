@@ -2,6 +2,7 @@
 
 
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 const profileImages = [
   "https://randomuser.me/api/portraits/men/75.jpg",
@@ -20,7 +21,7 @@ const BlueBoxTwo = () => {
       {/* Heading */}
       <div className="text-center">
         <h2 className="text-4xl font-bold text-white">Ambitious Students from 10+ countries trust </h2>
-        <p className="text-4xl italic text-[#5F7CFF] mt-2 font-medium">JobLinkr</p>
+        <p className="text-4xl italic text-[#5F7CFF] mt-2 font-medium">JobLynkr</p>
       </div>
 
       {/* Two rows, opposite scroll */}
@@ -61,9 +62,11 @@ const BlueBoxTwo = () => {
         <p className="text-white text-2xl sm:text-3xl md:text-4xl font-semibold italic text-center md:text-left">
           Join over Hundreds of Students<span className="text-blue-400 font-normal not-italic"> getting hired.</span> 
         </p>
+       <Link to="/contact">
         <button className="mt-6 md:mt-0 bg-[#2F71F2] hover:bg-[#1f59d8] text-white font-semibold py-3 px-6 rounded-xl transition duration-300">
           Start For Free
         </button>
+      </Link>
       </div>
     </div>
   );

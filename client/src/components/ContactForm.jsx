@@ -38,7 +38,8 @@ const ContactForm = () => {
     countryCode: "+91",
     phoneNumber: "",
     message: "",
-    professionalBackground: ""
+    professionalBackground: "",
+    interestedPlan: "",
   });
 
   const [snack, setSnack] = useState({ open: false, message: '', severity: 'success' });
@@ -77,7 +78,8 @@ const ContactForm = () => {
       countryCode: formData.countryCode,
       phoneNumber: formData.phoneNumber,
       message: formData.message,
-      professionalBackground: formData.professionalBackground
+      professionalBackground: formData.professionalBackground,
+      interestedPlan: formData.interestedPlan,
     };
 
     try {
@@ -98,7 +100,8 @@ const ContactForm = () => {
           countryCode: "+91",
           phoneNumber: "",
           message: "",
-          professionalBackground: ""
+          professionalBackground: "",
+          interestedPlan: "",
         });
       } else {
         setSnack({ open: true, message: data.error || "Something went wrong", severity: 'error' });
@@ -224,6 +227,26 @@ const ContactForm = () => {
             </RadioGroup>
           </FormControl>
         </div>
+
+        {/* Interested In Plan */}
+<div className="form-item">
+  <FormControl component="fieldset">
+    <FormLabel component="legend" style={{ color: "#fff" }}>
+      I am interested in
+    </FormLabel>
+    <RadioGroup
+      row
+      name="interestedPlan"
+      value={formData.interestedPlan}
+      onChange={handleChange}
+    >
+      <FormControlLabel value="Standard" control={<Radio style={{ color: "#fff" }} />} label="Standard plan" />
+      <FormControlLabel value="Premium" control={<Radio style={{ color: "#fff" }} />} label="Premium plan" />
+      <FormControlLabel value="Custom" control={<Radio style={{ color: "#fff" }} />} label="Custom plan" />
+    </RadioGroup>
+  </FormControl>
+</div>
+
 
         {/* Buttons */}
         <div className="flex gap-4 form-item">

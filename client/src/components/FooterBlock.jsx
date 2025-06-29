@@ -1,26 +1,33 @@
-
 import React from "react";
 import { Button } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { useNavigate } from "react-router-dom";
 
 const FooterBlock = () => {
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate("/contact");
+  };
+
   return (
     <div className="w-full bg-[#4A8CFF] py-20 px-4 text-white text-center rounded-t-[32px]">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         {/* Heading */}
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight font-inter">
-          Ready to land the interviews you {" "}
+          Ready to land the interviews you{" "}
           <span className="font-playfair italic font-medium">actually deserve?</span>
         </h2>
 
         {/* Subtext */}
         <p className="mt-6 text-lg sm:text-xl text-white/90 max-w-2xl font-inter">
-          Sign up for Joblinkr and get started — no pressure, <br/> no upfront fees.
+          Sign up for Joblinkr and get started — no pressure, <br /> no upfront fees.
         </p>
 
-        {/* CTA Button */}
+        {/* CTA Button with Redirect */}
         <div className="mt-8">
           <Button
+            onClick={handleRedirect}
             variant="contained"
             endIcon={<ArrowForwardIcon />}
             sx={{
@@ -55,4 +62,3 @@ const FooterBlock = () => {
 };
 
 export default FooterBlock;
-

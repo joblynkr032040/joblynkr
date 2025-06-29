@@ -16,11 +16,11 @@ import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
 
 const navLinks = [
-  { label: 'Sign Up', path: '/connect' },
-  { label: 'Sign In', path: '/connect' },
-  { label: 'Pricing', path: '/pricing' },
+  { label: 'Sign Up', path: '/contact' },
+  { label: 'Sign In', path: '/contact' },
+  // { label: 'Pricing', path: '/pricing' },
   { label: 'Blog', path: '/blog' },
-  { label: 'Get in Touch', path: '/connect' },
+  { label: 'Get in Touch', path: '/contact' },
 ];
 
 const Navbar = () => {
@@ -38,7 +38,7 @@ const Navbar = () => {
             variant="h6"
             sx={{
               color: '#fff',
-              background: '#000',
+              background: '#2979ff',
               px: 2,
               py: 1,
               fontFamily: 'Inter, sans-serif',
@@ -46,19 +46,19 @@ const Navbar = () => {
               fontSize: '1rem',
             }}
           >
-            Joblinkr
+            JobLynkr
           </Typography>
         </Link>
       </Box>
 
           {/* Desktop Nav Links */}
           <Box className="hidden md:flex space-x-8 text-black text-[16px] font-medium items-center">
-            <Button href="/pricing" color="inherit">Pricing</Button>
+            {/* <Button href="/pricing" color="inherit">Pricing</Button> */}
             <Button href="/blog" color="inherit">Blog</Button>
-            <Button href="/connect" color="inherit">Get in Touch</Button>
+            <Button href="/contact" color="inherit">Get in Touch</Button>
             {/* <Button href="/signin" sx={{ color: '#000', fontWeight: 500 }}>Sign In</Button> */}
             <Button
-              href="/connect"
+              href="/contact"
               sx={{
                 backgroundColor: '#0A0628',
                 color: '#fff',

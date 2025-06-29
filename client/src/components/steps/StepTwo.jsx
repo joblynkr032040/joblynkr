@@ -34,7 +34,7 @@ const StepTwo = () => {
         >
           <div className="bg-[#e7efff] rounded-[2rem] p-6 w-fit shadow-md">
             <img
-              src="/webimg3.avif"
+              src="step2.png"
               alt="Write Step Visual"
               className="w-full max-w-[600px] h-auto rounded-[2rem] shadow-lg"
             />

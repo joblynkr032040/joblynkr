@@ -1,25 +1,34 @@
 import React from 'react';
-import { Box, Typography, Container } from '@mui/material';
-import ConstructionIcon from '@mui/icons-material/Construction';
+import BlogText from "../BlogComponents/BlogText";
+import BlogCard from "../BlogComponents/BlogCard";
+import { Container } from '@mui/material';
+import {blogData} from "../../assets/blogData"
+
+
 
 function BlogPage() {
   return (
-    <Container maxWidth="md" sx={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <Box
-        textAlign="center"
-        p={4}
-        borderRadius={4}
-        bgcolor="#f5f5f5"
-        boxShadow={3}
-      >
-        <ConstructionIcon sx={{ fontSize: 60, color: '#f57c00', mb: 2 }} />
-        <Typography variant="h4" gutterBottom>
-          Blog Page Under Maintenance
-        </Typography>
-        <Typography variant="body1" color="text.secondary">
-          We're currently working on improving this section. Please check back later.
-        </Typography>
-      </Box>
+    <Container maxWidth="lg">
+      {/* Header */}
+      <BlogText />
+
+      {/* Blog Cards Grid */}
+      <div className="grid gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3 place-items-center mb-5">
+        {blogData.map((blog, idx) => (
+  <div
+    key={idx}
+    className="transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl hover:shadow-blue-200 rounded-xl"
+  >
+    <BlogCard
+      imageUrl={blog.imageUrl}
+      title={blog.title}
+      subtitle={blog.subtitle}
+      slug={blog.slug}
+    />
+  </div>
+))}
+
+      </div>
     </Container>
   );
 }

@@ -67,13 +67,21 @@ const HeroSection = ({
       </div>
 
       {/* Subtext */}
-      <Typography
+      {/* <Typography
         variant="subtitle1"
         className="mt-6 text-gray-700 sm:text-lg text-lg max-w-xl mx-auto my-4"
         style={{ fontFamily: "'Display', serif" }}
       >
         {subtext}
-      </Typography>
+      </Typography> */}
+      <Typography
+  variant="h6"
+  className="mt-8 mb-6 text-gray-800 sm:text-xl text-xl max-w-2xl mx-auto leading-relaxed tracking-wide"
+  style={{ fontFamily: "'Georgia', serif" }} 
+>
+  {subtext}
+</Typography>
+
 
       {/* Button */}
       <Button

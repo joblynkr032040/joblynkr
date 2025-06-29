@@ -64,7 +64,7 @@ const StepThree = () => {
         <div className={`flex-1 flex ${isMobile ? 'justify-center' : 'justify-end'} mt-6`}>
           <div className="bg-[#e3fbe9] rounded-[2rem] p-6 w-fit shadow-md">
             <img
-              src="/webimg4.avif"
+              src="/step3.png"
               alt="Analyze & Optimize Visual"
               className="w-full max-w-[600px] h-auto rounded-[2rem] shadow-lg"
             />

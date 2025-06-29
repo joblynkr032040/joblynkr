@@ -7,6 +7,7 @@ import PricingPage from './components/pages/PricingPage';
 import BlogPage from './components/pages/BlogPage';
 import NotFound from './components/pages/NotFound';
 import SupportPage from './components/pages/SupportPage'
+import BlogDetailPage from './components/pages/BlogDetailPage';
 
 function App() {
   return (
@@ -14,9 +15,9 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="pricing" element={<PricingPage />} />
-        <Route path="blog" element={<BlogPage />} />
-        <Route path="connect" element={<SupportPage />} />
-        
+         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogDetailPage />} />
+        <Route path="contact" element={<SupportPage />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

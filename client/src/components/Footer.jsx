@@ -10,12 +10,12 @@ const Footer = () => {
         <Box className="space-y-4">
           <div className="flex items-center space-x-2">
             <img
-              src="/Joblinkr.jpg"
+              src="/officialLogo.png"
               alt="LazyLines Logo"
               className="h-8 w-8"
             />
             <Typography variant="h6" className="font-bold">
-              JobLinkr
+              JobLynkr
             </Typography>
           </div>
           <Typography variant="body2" className="text-sm text-gray-600 leading-relaxed">
@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="flex items-center space-x-2 text-blue-600">
             <EmailIcon fontSize="small" />
             <Link href="mailto:contact@lazylines.ai" underline="hover">
-              joblinkr.connect@gmail.com
+              email coming soon...
             </Link>
           </div>
         </Box>
@@ -64,7 +64,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="text-center text-xs text-gray-400 mt-10">
-        © {new Date().getFullYear()} JobLinkr. All Rights Reserved.
+        © {new Date().getFullYear()} JobLynkr. All Rights Reserved.
       </div>
     </footer>
   );
