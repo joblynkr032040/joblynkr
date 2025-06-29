@@ -1,38 +1,27 @@
-// // components/Layout.jsx
-// import React from 'react';
-// import Container from './Container';
-
-// const Layout = ({ children }) => {
-//   return (
-//     <Container>
-//       {children}
-//     </Container>
-//   );
-// };
-
-// export default Layout;
-
-
-
 // components/Layout.jsx
 import React from 'react';
-import Container from './Container';
 import { Outlet } from 'react-router-dom';
-import Navbar from './Navbar'; // Optional, if you have one
-import Footer from './Footer'; // Optional, if needed on all pages
+import Navbar from './Navbar';     // Include if used globally
+import Footer from './Footer';     // Include if you want it on all pages
+import Container from './Container';
 
 const Layout = () => {
   return (
     <>
-      <Container>
-        <Outlet /> {/* This is where page-specific content will be rendered */}
-      </Container>
-      {/* Optional Footer */}
+      {/* Optional: Global Navbar */}
+      {/* <Navbar /> */}
+
+      {/* Main Content */}
+      <main className="min-h-screen">
+        <Container>
+          <Outlet />
+        </Container>
+      </main>
+
+      {/* Global Footer */}
       <Footer />
     </>
   );
 };
 
 export default Layout;
-
-

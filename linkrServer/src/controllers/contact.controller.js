@@ -85,7 +85,6 @@ export const submitContactForm = async (req, res) => {
       phoneNumber,
       message,
       professionalBackground,
-      interestedPlan  // ✅ New field
     } = req.body;
 
     const newEntry = new ContactForm({
@@ -95,7 +94,6 @@ export const submitContactForm = async (req, res) => {
       phoneNumber,
       message,
       professionalBackground,
-      interestedPlan  // ✅ Save to DB
     });
 
     const response = await newEntry.save();
@@ -116,7 +114,6 @@ export const submitContactForm = async (req, res) => {
       phoneNumber: fullPhone,
       professionalBackground,
       message,
-      interestedPlan // ✅ Included in client email
     });
 
     const adminHtml = adminEmailHtml({
@@ -125,7 +122,6 @@ export const submitContactForm = async (req, res) => {
       phoneNumber: fullPhone,
       professionalBackground,
       message,
-      interestedPlan // ✅ Included in admin email
     });
 
     try {

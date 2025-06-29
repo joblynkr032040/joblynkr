@@ -20,7 +20,7 @@ export function clientEmailHtml({ firstName, lastName, email, phoneNumber, servi
       <p style="font-size: 0.9em; color: #888;">
         If you did not submit this request, please ignore this email.
       </p>
-      <p style="color: #4CAF50;">Best regards,<br>Your Company Team</p>
+      <p style="color: #4CAF50;">Best regards,<br>JobLynkr Team</p>
     </div>
   `;
 }

@@ -3,68 +3,93 @@ import { Box, Typography, Link } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-white py-12 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-700">
-        {/* Logo & Description */}
-        <Box className="space-y-4">
-          <div className="flex items-center space-x-2">
+    <footer className="bg-white border-t border-gray-200 py-12 text-gray-700">
+      <div className="max-w-7xl mx-auto px-4 grid gap-10 grid-cols-1 md:grid-cols-3">
+        {/* Logo + About */}
+        <Box component="section" className="space-y-4">
+          <div className="flex items-center gap-2">
             <img
               src="/officialLogo.png"
-              alt="LazyLines Logo"
+              alt="JobLynkr Logo"
               className="h-8 w-8"
             />
             <Typography variant="h6" className="font-bold">
               JobLynkr
             </Typography>
           </div>
-          <Typography variant="body2" className="text-sm text-gray-600 leading-relaxed">
-            Your personal brand partner for global jobs. We do the work — you get the interviews.
+          <Typography
+            variant="body2"
+            className="text-sm text-gray-600 leading-relaxed"
+          >
+            Your personal brand partner for global jobs.
+            <br /> We do the work — you get the interviews.
           </Typography>
-          <div className="flex items-center space-x-2 text-blue-600">
+          <address className="not-italic flex items-center gap-2 text-blue-600">
             <EmailIcon fontSize="small" />
             <Link href="mailto:contact@lazylines.ai" underline="hover">
               email coming soon...
             </Link>
-          </div>
+          </address>
         </Box>
 
-        {/* Navigation Links */}
-        <Box>
+        {/* Navigation */}
+        <nav aria-label="Footer Navigation">
           <Typography variant="subtitle1" className="font-semibold mb-4">
             Navigation
           </Typography>
           <ul className="space-y-2 text-sm">
-            {["Pricing", "Support", "Affiliate Program", "Blog", "Changelog"].map((item) => (
-              <li key={item}>
-                <Link href="#" underline="hover" className="text-gray-600 hover:text-gray-900">
-                  {item}
+            {[
+              // { label: "Pricing", href: "#" },
+              { label: "Support", href: "/contact" },
+              { label: "Affiliate Program", href: "#" },
+              { label: "Blog", href: "/blog" },
+              { label: "Changelog", href: "#" },
+            ].map((item) => (
+              <li key={item.label}>
+                <Link
+                  href={item.href}
+                  underline="hover"
+                  className="text-gray-600 hover:text-gray-900"
+                >
+                  {item.label}
                 </Link>
               </li>
             ))}
           </ul>
-        </Box>
+        </nav>
 
-        {/* Legal Links */}
-        <Box>
+        {/* Legal */}
+        <nav aria-label="Legal">
           <Typography variant="subtitle1" className="font-semibold mb-4">
             Legal
           </Typography>
           <ul className="space-y-2 text-sm">
-            {["Privacy Policy", "Terms & Conditions", "Refund Policy", "Affiliate TOS"].map((item) => (
-              <li key={item}>
-                <Link href="#" underline="hover" className="text-gray-600 hover:text-gray-900">
-                  {item}
+            {[
+              { label: "Privacy Policy", href: "#" },
+              { label: "Terms & Conditions", href: "#" },
+              { label: "Refund Policy", href: "#" },
+              { label: "Affiliate TOS", href: "#" },
+            ].map((item) => (
+              <li key={item.label}>
+                <Link
+                  href={item.href}
+                  underline="hover"
+                  className="text-gray-600 hover:text-gray-900"
+                >
+                  {item.label}
                 </Link>
               </li>
             ))}
           </ul>
-        </Box>
+        </nav>
       </div>
 
       {/* Copyright */}
-      <div className="text-center text-xs text-gray-400 mt-10">
-        © {new Date().getFullYear()} JobLynkr. All Rights Reserved.
+      <div className="mt-10 text-center text-xs text-gray-400">
+        © {currentYear} JobLynkr. All rights reserved.
       </div>
     </footer>
   );

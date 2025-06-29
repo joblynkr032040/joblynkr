@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 import React, { useEffect, useRef, useState } from "react";
 import {
   TextField,
@@ -13,7 +11,8 @@ import {
   createTheme,
   ThemeProvider,
   Snackbar,
-  Alert
+  Alert,
+  FormHelperText,
 } from "@mui/material";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -29,26 +28,26 @@ const whiteTextTheme = createTheme({
   },
 });
 
+const initialForm = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  countryCode: "+91",
+  phoneNumber: "",
+  message: "",
+  professionalBackground: "",
+};
+
 const ContactForm = () => {
   const formRef = useRef(null);
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    countryCode: "+91",
-    phoneNumber: "",
-    message: "",
-    professionalBackground: "",
-    interestedPlan: "",
-  });
-
-  const [snack, setSnack] = useState({ open: false, message: '', severity: 'success' });
+  const [formData, setFormData] = useState(initialForm);
+  const [formErrors, setFormErrors] = useState({});
+  const [snack, setSnack] = useState({ open: false, message: "", severity: "success" });
 
   useEffect(() => {
-    const formElements = gsap.utils.toArray(".form-item");
-    gsap.set(formElements, { opacity: 0, y: 40 });
-
-    ScrollTrigger.batch(formElements, {
+    const elements = gsap.utils.toArray(".form-item");
+    gsap.set(elements, { opacity: 0, y: 40 });
+    ScrollTrigger.batch(elements, {
       onEnter: (batch) =>
         gsap.to(batch, {
           opacity: 1,
@@ -64,51 +63,58 @@ const ContactForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormErrors((prev) => ({ ...prev, [name]: "" })); // Clear error on change
+  };
+
+  const validateForm = () => {
+    const errors = {};
+
+    if (!formData.firstName.trim()) errors.firstName = "First name is required.";
+    if (!formData.lastName.trim()) errors.lastName = "Last name is required.";
+    if (!formData.email.trim()) {
+      errors.email = "Email is required.";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      errors.email = "Enter a valid email.";
+    }
+    if (!formData.phoneNumber.trim()) errors.phoneNumber = "Phone number is required.";
+    if (!formData.message.trim()) errors.message = "Message cannot be empty.";
+    if (!formData.professionalBackground) errors.professionalBackground = "Select your background.";
+
+    return errors;
   };
 
   const handleSubmit = async () => {
-    const payload = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      countryCode: formData.countryCode,
-      phoneNumber: formData.phoneNumber,
-      message: formData.message,
-      professionalBackground: formData.professionalBackground,
-      interestedPlan: formData.interestedPlan,
-    };
+    const errors = validateForm();
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors);
+      setSnack({ open: true, message: "Please fill all required fields.", severity: "error" });
+      return;
+    }
 
     try {
       const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(formData),
       });
 
       const data = await res.json();
-
       if (res.ok) {
-        setSnack({ open: true, message: "Form submitted successfully!", severity: 'success' });
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          countryCode: "+91",
-          phoneNumber: "",
-          message: "",
-          professionalBackground: "",
-          interestedPlan: "",
-        });
+        setSnack({ open: true, message: "Form submitted successfully!", severity: "success" });
+        setFormData(initialForm);
+        setFormErrors({});
       } else {
-        setSnack({ open: true, message: data.error || "Something went wrong", severity: 'error' });
+        setSnack({ open: true, message: data?.error || "Something went wrong", severity: "error" });
       }
-    } catch (err) {
-      setSnack({ open: true, message: "Server error. Try again later.", severity: 'error' });
+    } catch {
+      setSnack({ open: true, message: "Server error. Try again later.", severity: "error" });
     }
+  };
+
+  const inputStyle = {
+    InputLabelProps: { style: { color: "#fff" } },
+    InputProps: { style: { color: "#fff" } },
   };
 
   return (
@@ -124,8 +130,9 @@ const ContactForm = () => {
             variant="outlined"
             fullWidth
             size="small"
-            InputLabelProps={{ style: { color: "#fff" } }}
-            InputProps={{ style: { color: "#fff" } }}
+            {...inputStyle}
+            error={!!formErrors.firstName}
+            helperText={formErrors.firstName}
           />
           <TextField
             label="Last name"
@@ -135,8 +142,9 @@ const ContactForm = () => {
             variant="outlined"
             fullWidth
             size="small"
-            InputLabelProps={{ style: { color: "#fff" } }}
-            InputProps={{ style: { color: "#fff" } }}
+            {...inputStyle}
+            error={!!formErrors.lastName}
+            helperText={formErrors.lastName}
           />
         </div>
 
@@ -151,8 +159,9 @@ const ContactForm = () => {
             fullWidth
             size="small"
             placeholder="name@example.com"
-            InputLabelProps={{ style: { color: "#fff" } }}
-            InputProps={{ style: { color: "#fff" } }}
+            {...inputStyle}
+            error={!!formErrors.email}
+            helperText={formErrors.email}
           />
         </div>
 
@@ -166,12 +175,11 @@ const ContactForm = () => {
             onChange={handleChange}
             size="small"
             className="w-32"
-            InputLabelProps={{ style: { color: "#fff" } }}
-            InputProps={{ style: { color: "#fff" } }}
+            {...inputStyle}
           >
-            {countryCodes.map((option) => (
-              <MenuItem key={option.code} value={option.code}>
-                {option.label} {option.code}
+            {countryCodes.map(({ code, label }) => (
+              <MenuItem key={code} value={code}>
+                {label} {code}
               </MenuItem>
             ))}
           </TextField>
@@ -184,8 +192,9 @@ const ContactForm = () => {
             fullWidth
             size="small"
             placeholder="0203 0407291"
-            InputLabelProps={{ style: { color: "#fff" } }}
-            InputProps={{ style: { color: "#fff" } }}
+            {...inputStyle}
+            error={!!formErrors.phoneNumber}
+            helperText={formErrors.phoneNumber}
           />
         </div>
 
@@ -201,15 +210,16 @@ const ContactForm = () => {
             size="small"
             multiline
             rows={4}
-            placeholder="Hello JobLinkr team,"
-            InputLabelProps={{ style: { color: "#fff" } }}
-            InputProps={{ style: { color: "#fff" } }}
+            placeholder="Hello JobLynkr team,"
+            {...inputStyle}
+            error={!!formErrors.message}
+            helperText={formErrors.message}
           />
         </div>
 
         {/* Professional Background */}
         <div className="form-item">
-          <FormControl component="fieldset">
+          <FormControl component="fieldset" error={!!formErrors.professionalBackground}>
             <FormLabel component="legend" style={{ color: "#fff" }}>
               Professional Background
             </FormLabel>
@@ -219,80 +229,65 @@ const ContactForm = () => {
               value={formData.professionalBackground}
               onChange={handleChange}
             >
-              <FormControlLabel value="IT" control={<Radio style={{ color: "#fff" }} />} label="IT" />
-              <FormControlLabel value="Design" control={<Radio style={{ color: "#fff" }} />} label="Design" />
-              <FormControlLabel value="Finance" control={<Radio style={{ color: "#fff" }} />} label="Finance" />
-              <FormControlLabel value="Sales" control={<Radio style={{ color: "#fff" }} />} label="Sales" />
-              <FormControlLabel value="Other" control={<Radio style={{ color: "#fff" }} />} label="Other" />
+              {["IT", "Design", "Finance", "Sales", "Other"].map((field) => (
+                <FormControlLabel
+                  key={field}
+                  value={field}
+                  control={<Radio style={{ color: "#fff" }} />}
+                  label={field}
+                />
+              ))}
             </RadioGroup>
+            {formErrors.professionalBackground && (
+              <FormHelperText>{formErrors.professionalBackground}</FormHelperText>
+            )}
           </FormControl>
         </div>
 
-        {/* Interested In Plan */}
-<div className="form-item">
-  <FormControl component="fieldset">
-    <FormLabel component="legend" style={{ color: "#fff" }}>
-      I am interested in
-    </FormLabel>
-    <RadioGroup
-      row
-      name="interestedPlan"
-      value={formData.interestedPlan}
-      onChange={handleChange}
-    >
-      <FormControlLabel value="Standard" control={<Radio style={{ color: "#fff" }} />} label="Standard plan" />
-      <FormControlLabel value="Premium" control={<Radio style={{ color: "#fff" }} />} label="Premium plan" />
-      <FormControlLabel value="Custom" control={<Radio style={{ color: "#fff" }} />} label="Custom plan" />
-    </RadioGroup>
-  </FormControl>
-</div>
-
-
-        {/* Buttons */}
+        {/* Submit Button */}
         <div className="flex gap-4 form-item">
           <Button variant="contained" color="primary" fullWidth onClick={handleSubmit}>
             Send message
           </Button>
-          {/* <Button variant="outlined" color="primary" fullWidth>
-            Schedule a call
-          </Button> */}
         </div>
 
-        {/* Snackbar for feedback */}
-       <Snackbar
-  open={snack.open}
-  autoHideDuration={4000}
-  onClose={() => setSnack({ ...snack, open: false })}
-  anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-  TransitionProps={{ onExited: () => setSnack({ ...snack, open: false }) }}
->
-  <Alert
-    severity={snack.severity}
-    variant="filled"
-    onClose={() => setSnack({ ...snack, open: false })}
-    sx={{
-      width: '100%',
-      borderRadius: '12px',
-      boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
-      fontSize: '1rem',
-      alignItems: 'center',
-      backgroundColor:
-        snack.severity === 'success' ? '#43a047' :
-        snack.severity === 'error' ? '#e53935' :
-        snack.severity === 'warning' ? '#fdd835' : '#1e88e5',
-      color: '#fff'
-    }}
-    iconMapping={{
-      success: <span>✅</span>,
-      error: <span>❌</span>,
-      warning: <span>⚠️</span>,
-      info: <span>ℹ️</span>,
-    }}
-  >
-    {snack.message}
-  </Alert>
-</Snackbar>
-
+        {/* Snackbar */}
+        <Snackbar
+          open={snack.open}
+          autoHideDuration={4000}
+          onClose={() => setSnack((prev) => ({ ...prev, open: false }))}
+          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        >
+          <Alert
+            severity={snack.severity}
+            variant="filled"
+            onClose={() => setSnack((prev) => ({ ...prev, open: false }))}
+            sx={{
+              width: "100%",
+              borderRadius: "12px",
+              boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+              fontSize: "1rem",
+              alignItems: "center",
+              backgroundColor:
+                snack.severity === "success"
+                  ? "#43a047"
+                  : snack.severity === "error"
+                  ? "#e53935"
+                  : snack.severity === "warning"
+                  ? "#fdd835"
+                  : "#1e88e5",
+              color: "#fff",
+            }}
+            iconMapping={{
+              success: <span>✅</span>,
+              error: <span>❌</span>,
+              warning: <span>⚠️</span>,
+              info: <span>ℹ️</span>,
+            }}
+          >
+            {snack.message}
+          </Alert>
+        </Snackbar>
       </div>
     </ThemeProvider>
   );

@@ -31,12 +31,6 @@ const ContactFormSchema = new mongoose.Schema({
     enum: ['IT', 'Design', 'Finance', 'Sales', 'Other'],
     required: true
   },
-  interestedPlan: {
-    type: String,
-    enum: ['Standard', 'Premium', 'Custom'],
-    required: false,
-    trim: true
-  },
   createdAt: {
     type: Date,
     default: Date.now

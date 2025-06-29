@@ -1,11 +1,10 @@
 /* eslint-disable no-unused-vars */
-
 import React, { useRef } from 'react';
 import { Typography, Button, Chip } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import '@fontsource/playfair-display/400-italic.css';
 import '@fontsource/playfair-display/600-italic.css';
-import { motion , useScroll, useTransform } from 'framer-motion';
 
 const HeroSection = ({
   tagline = 'Trusted by 10k+ students',
@@ -13,14 +12,13 @@ const HeroSection = ({
   headlineEmphasis = 'Results,',
   headlineSub = 'Not Rejections',
   subtext = 'From resume to interviews — we handle everything that gets you hired.',
-  buttonText = "See How It Works",
+  buttonText = 'See How It Works',
 }) => {
   const ref = useRef(null);
 
-  // scroll progress for this section only
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end start"] // triggers when top of element hits top, until it leaves
+    offset: ['start start', 'end start'],
   });
 
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
@@ -29,14 +27,14 @@ const HeroSection = ({
   return (
     <motion.div
       ref={ref}
-      className="pt-20 w-full flex flex-col items-center justify-center text-center px-4 mt-3 rounded-xl"
       style={{
         background: `linear-gradient(to bottom, rgba(255,255,255,0) 0%, #eef3ff 30%, #becde6 100%)`,
         scale,
         opacity,
       }}
+      className="pt-20 px-4 mt-3 w-full flex flex-col items-center justify-center text-center rounded-xl"
     >
-      {/* Chip */}
+      {/* Tagline Chip */}
       <Chip
         label={tagline}
         sx={{
@@ -58,7 +56,7 @@ const HeroSection = ({
           style={{
             fontFamily: "'Playfair Display', serif",
             fontStyle: 'italic',
-            fontWeight: 600
+            fontWeight: 600,
           }}
         >
           {headlineEmphasis}
@@ -67,23 +65,15 @@ const HeroSection = ({
       </div>
 
       {/* Subtext */}
-      {/* <Typography
-        variant="subtitle1"
-        className="mt-6 text-gray-700 sm:text-lg text-lg max-w-xl mx-auto my-4"
-        style={{ fontFamily: "'Display', serif" }}
+      <Typography
+        variant="h6"
+        className="mt-8 mb-6 text-gray-800 text-xl sm:text-xl max-w-2xl mx-auto leading-relaxed tracking-wide"
+        style={{ fontFamily: 'Georgia, serif' }}
       >
         {subtext}
-      </Typography> */}
-      <Typography
-  variant="h6"
-  className="mt-8 mb-6 text-gray-800 sm:text-xl text-xl max-w-2xl mx-auto leading-relaxed tracking-wide"
-  style={{ fontFamily: "'Georgia', serif" }} 
->
-  {subtext}
-</Typography>
+      </Typography>
 
-
-      {/* Button */}
+      {/* CTA Button */}
       <Button
         variant="contained"
         endIcon={<ArrowForwardIcon />}
@@ -100,17 +90,19 @@ const HeroSection = ({
             backgroundColor: '#1565c0',
           },
         }}
+        aria-label="See how it works"
       >
         {buttonText}
       </Button>
 
-      {/* Right Image Section */}
+      {/* Image */}
       <div className="w-full flex justify-center items-center mt-6">
         <div className="w-full max-w-[1200px] px-4">
           <img
             src="/homepagev3.png"
-            alt="Dashboard Preview"
-            className="rounded-xl shadow-lg mx-auto mb-1 w-full sm:w-[120%] md:w-[135%] lg:w-[100%] xl:w-[115%]"
+            alt="Preview of the JobLynkr dashboard and service flow"
+            loading="lazy"
+            className="rounded-xl shadow-lg mx-auto w-full sm:w-[120%] md:w-[135%] lg:w-[100%] xl:w-[115%]"
           />
         </div>
       </div>
@@ -119,4 +111,5 @@ const HeroSection = ({
 };
 
 export default HeroSection;
+
 
