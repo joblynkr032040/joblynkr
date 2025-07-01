@@ -247,7 +247,7 @@ const ContactForm = () => {
         {/* Submit Button */}
         <div className="flex gap-4 form-item">
           <Button variant="contained" color="primary" fullWidth onClick={handleSubmit}>
-            Send message
+            Schedule My Free Career Call
           </Button>
         </div>
 
@@ -256,7 +256,7 @@ const ContactForm = () => {
           open={snack.open}
           autoHideDuration={4000}
           onClose={() => setSnack((prev) => ({ ...prev, open: false }))}
-          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
         >
           <Alert
             severity={snack.severity}

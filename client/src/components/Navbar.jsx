@@ -35,7 +35,7 @@ const Navbar = () => {
       >
         <Toolbar className="w-full max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo */}
-          <Box className="flex items-center space-x-2">
+          {/* <Box className="flex items-center space-x-2">
             <Link to="/" style={{ textDecoration: 'none' }}>
               <Typography
                 variant="h6"
@@ -53,7 +53,29 @@ const Navbar = () => {
                 JobLynkr
               </Typography>
             </Link>
-          </Box>
+          </Box> */}
+
+          <Box className="flex items-center">
+  <Link to="/" style={{ textDecoration: 'none' }}>
+    <Typography
+      variant="h6"
+      sx={{
+        color: '#2979ff',
+        fontFamily: 'Inter, sans-serif',
+        fontWeight: 600,
+        fontSize: '1.3rem',
+        letterSpacing: '0.5px',
+        transition: 'color 0.3s ease',
+        '&:hover': {
+          color: '#1565c0'
+        }
+      }}
+    >
+      JobLynkr
+    </Typography>
+  </Link>
+</Box>
+
 
           {/* Desktop Nav Links */}
           <Box className="hidden md:flex space-x-8 text-black text-[16px] font-medium items-center">
