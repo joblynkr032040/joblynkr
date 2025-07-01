@@ -12,33 +12,47 @@ const BlogCard = ({ imageUrl, title, subtitle, slug }) => {
   return (
     <Card
       onClick={handleClick}
-      className="rounded-3xl shadow-sm transition-transform hover:scale-[1.01] duration-200 cursor-pointer"
+      className="cursor-pointer transition-all duration-300 ease-in-out hover:scale-[1.025] hover:shadow-lg hover:shadow-blue-100"
       sx={{
         width: 350,
-        backgroundColor: "#F9F9F9",
+        minHeight: 420, // Ensures uniform height for all cards
+        backgroundColor: "#ffffff",
         borderRadius: "1.5rem",
+        boxShadow: "0 2px 12px rgba(0, 0, 0, 0.05)",
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
-      <CardMedia
+      {/* Image section */}
+      <div className="relative overflow-hidden rounded-t-3xl">
+        <CardMedia
         component="img"
-        height="200"
         image={imageUrl}
         alt={title}
         sx={{
+          height: 200,
+          width: "100%", 
+          objectFit: "cover",
           borderTopLeftRadius: "1.5rem",
           borderTopRightRadius: "1.5rem",
-          objectFit: "cover",
         }}
       />
-      <CardContent>
+      </div>
+
+      {/* Text section */}
+      <CardContent className="px-5 py-4 flex flex-col flex-grow">
         <Typography
           variant="h6"
           component="div"
-          className="text-[#0C0520] font-semibold leading-snug"
+          className="text-[#111827] font-semibold leading-snug text-[1.1rem]"
         >
           {title}
         </Typography>
-        <Typography variant="body2" className="text-gray-500 mt-2">
+        <Typography
+          variant="body2"
+          className="text-gray-600 mt-2 leading-relaxed"
+        >
           {subtitle}
         </Typography>
       </CardContent>

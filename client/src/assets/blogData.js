@@ -1,9 +1,125 @@
 
 export const blogData = [
     {
+  slug: "indian-student-us-joblynkr-success",
+  title: "How an Indian Student in the US Got 4 Interview Calls in 2 Weeks with JobLynkr",
+  subtitle: "From silence to interviews — a behind-the-scenes look at how we helped turn potential into results.",
+  imageUrl: "blogThumbnails/banner.png",
+  content: [
+    {
+      type: "paragraph",
+      text: "When Sahil (name changed for privacy), a final-year Master’s student in the U.S., reached out to us, he was stuck. Despite a strong academic record, solid projects, and multiple job applications, the result was always the same — no interview calls, no feedback, just silence."
+    },
+    {
+      type: "paragraph",
+      text: "Sahil wasn’t alone. Thousands of international students find themselves lost in the job market — overlooked not because they’re unqualified, but because they’re not packaged or positioned right. That’s where JobLynkr stepped in."
+    },
+    {
+      type: "heading",
+      text: "🚀 Step 1: Build a Personal Brand That Speaks for You"
+    },
+    {
+      type: "paragraph",
+      text: "We began by doing what most students skip — building Sahil’s *personal brand*. His resume was restructured from a generic academic template into an ATS-optimized, recruiter-focused pitch. We rewrote his LinkedIn profile to target U.S. tech roles — with strong, searchable headlines, clear skill positioning, and project highlights that told a story."
+    },
+    {
+      type: "paragraph",
+      text: "Most importantly, we crafted a clean, personalized **portfolio website** that showcased his technical projects — giving recruiters an instant, credible view of his work. In a crowded market, this brand upgrade made Sahil *stand out*."
+    },
+    {
+      type: "list",
+      items: [
+        "✅ ATS-compliant resume with the right keywords",
+        "✅ LinkedIn optimized for U.S. hiring workflows",
+        "✅ Project-based portfolio site to demonstrate credibility",
+        "✅ Branded consistency across platforms"
+      ]
+    },
+    {
+      type: "heading",
+      text: "🎯 Step 2: Apply Smart — With Strategy and Support"
+    },
+    {
+      type: "paragraph",
+      text: "Once Sahil’s brand was ready, we moved to execution. Instead of applying randomly, we built a shortlist of companies actively hiring OPT/CPT-friendly candidates. Every job was matched with his skills, location preference, and visa status."
+    },
+    {
+      type: "paragraph",
+      text: "We then applied on his behalf — but not blindly. Every application included tailored resumes and role-specific positioning. Sahil didn’t waste hours clicking “Apply Now.” We handled the research, writing, and submission — while he focused on preparing for opportunities."
+    },
+    {
+      type: "list",
+      items: [
+        "✅ Job research focused on visa-accepting roles",
+        "✅ Personalized applications (not copy-paste spam)",
+        "✅ End-to-end application support — no guesswork",
+        "✅ Pay-after-interview model — zero upfront risk"
+      ]
+    },
+    {
+      type: "heading",
+      text: "🎤 Step 3: Practice for Performance — and Win"
+    },
+    {
+      type: "paragraph",
+      text: "Within 2 weeks, Sahil had received 4 interview invitations — 2 from mid-sized product companies, 1 startup, and 1 remote-friendly analytics role. But interviews aren’t about luck — they’re about *delivery*. We booked mock sessions for each type of interview he was facing: behavioral, technical, and even cultural fit rounds."
+    },
+    {
+      type: "paragraph",
+      text: "Our mock interviews weren’t just Q&A — they were targeted rehearsals with real feedback, answer structuring help, and body language coaching. By the time his real interviews came, Sahil wasn’t nervous. He was *ready*."
+    },
+    {
+      type: "list",
+      items: [
+        "✅ 1:1 mock interviews based on company type",
+        "✅ Storytelling coaching using STAR format",
+        "✅ Technical confidence without over-explaining",
+        "✅ Personalized notes after every mock session"
+      ]
+    },
+    {
+      type: "heading",
+      text: "📈 The Result: Interviews. Confidence. Momentum."
+    },
+    {
+      type: "paragraph",
+      text: "In just 14 days, Sahil went from being ignored to being invited. With our help, he got multiple interview calls, real experience in live conversations, and the momentum to keep going. And this is just the start — he's now in final rounds with 2 promising employers."
+    },
+    {
+      type: "heading",
+      text: "🧠 A Second Student, Same Story — Different Domain"
+    },
+    {
+      type: "paragraph",
+      text: "Another student we worked with — Aditi (again, name changed) — was a design student struggling to break into U.S.-based UX internships. We helped her reposition her projects for the U.S. market, created a portfolio site that *looked* like a designer built it, and rewrote her case studies to show thinking, not just visuals. Within a month, she landed 3 callbacks — one of which turned into a paid internship."
+    },
+    {
+      type: "heading",
+      text: "✨ What This Means for You"
+    },
+    {
+      type: "paragraph",
+      text: "If you're an international student, recent graduate, or early-career professional feeling stuck, you're not alone. But you're also not out of options. You don't need to guess your way through the hiring maze. Let us build your brand, handle the hard parts of applying, and prepare you for success — just like we did for Sahil and Aditi."
+    },
+    {
+      type: "heading",
+      text: "📩 Ready to Make It Happen?"
+    },
+    {
+      type: "paragraph",
+      text: "At JobLynkr, we only win when you do. That’s why we operate on a *pay-after-interview* model. No fluff, no noise — just smart strategy, proven results, and full support until you get hired."
+    },
+    {
+      type: "paragraph",
+      text: "Reach out today at joblynkr.connect@gmail.com and let’s start building your success story."
+    }
+  ]
+    },
+
+    {
     slug: "resume-optimization",
-    title: "Keyword Optimization in Resume Writing",
-    subtitle: "Stand out in the job market by mastering ATS-friendly keywords.",
+    title: "Why Your Resume Isn’t Working — And How an ATS-Optimized One Can Fix That",
+    subtitle: "Stand out in the job market by mastering ATS-friendly resume.",
     imageUrl: "blogThumbnails/resume.jpg",
     content: [
         {
@@ -145,9 +261,9 @@ export const blogData = [
 
     {
   slug: "personal-branding",
-  title: "Why Every Professional Needs to Create a Personal Brand",
+  title: "Why Every Ambitious Professional Should Build a Personal Brand (Before It’s Too Late)",
   subtitle: "This is the real way how introverts are playing the game...",
-  imageUrl: "blogThumbnails/portfolio.jpg",
+  imageUrl: "blogThumbnails/porsonalbrand.png",
   content: [
     {
       type: "paragraph",
@@ -266,7 +382,239 @@ export const blogData = [
       text: "Trust is the foundation of all strong brands — personal or corporate. It’s earned through consistency, transparency, and authenticity. Without it, you’ll be just another voice lost in the noise."
     }
   ]
-}
+    },
 
+    {
+  slug: "portfolio-advantage",
+  title: "The Portfolio Website Advantage: How Smart Candidates Get Noticed (and Hired)",
+  subtitle: "Your degree gets you qualified — your portfolio gets you chosen.",
+  imageUrl: "blogThumbnails/portfolioimg.jpg",
+  content: [
+    {
+      type: "paragraph",
+      text: "In a world of resumes and LinkedIn profiles, the candidates who win interviews are the ones who do more than just tell — they show. A well-crafted portfolio website is one of the most powerful tools for job seekers to demonstrate credibility, skill, and personality. It’s not just a digital resume — it’s a career launchpad."
+    },
+    {
+      type: "heading",
+      text: "What is a Portfolio Website?"
+    },
+    {
+      type: "paragraph",
+      text: "A portfolio website is a personal site that showcases your projects, experience, skills, and professional story. Unlike a resume or LinkedIn profile, it's fully customizable — allowing you to express your uniqueness with full creative control. For developers, designers, marketers, analysts, and even generalists, it's your proof of work and personality rolled into one."
+    },
+    {
+      type: "heading",
+      text: "Why a Portfolio Website Gives You an Edge"
+    },
+    {
+      type: "list",
+      items: [
+        "**Proof of Skill** – Recruiters want to see what you’ve *actually* built or done. A portfolio shows your capabilities in action.",
+        "**Memorable First Impression** – You’re not just another PDF resume in a pile. You’re a brand — and that sticks.",
+        "**Instant Credibility** – A polished website makes you look professional, prepared, and confident — even if you’re a student or recent grad.",
+        "**Control the Narrative** – You decide how your story is told, what to highlight, and how to present your best self.",
+        "**24/7 Access Point** – Recruiters can view your work at any time, without needing to request it."
+      ]
+    },
+    {
+      type: "heading",
+      text: "What to Include in a Powerful Portfolio"
+    },
+    {
+      type: "list",
+      items: [
+        "A Strong Homepage – Clear introduction, tagline, and call-to-action.",
+        "About You Section – Your story, background, and goals.",
+        "Project Showcase – Highlight 3–5 key projects with visuals, context, and impact.",
+        "Skills & Tools – Stack or toolset you’re comfortable with.",
+        "Resume Download + Contact Info – Make it easy to connect and hire you."
+      ]
+    },
+    {
+      type: "heading",
+      text: "How JobLynkr Helps You Build It Right"
+    },
+    {
+      type: "paragraph",
+      text: "At JobLynkr, we build *personalized* portfolio websites designed to impress — not just other developers, but actual recruiters. Whether you're a coder, designer, or aspiring analyst, we tailor your site to reflect your strengths and position you for the roles you want."
+    },
+    {
+      type: "list",
+      items: [
+        "Custom Design (No Templates)",
+        "Responsive & Fast-Loading",
+        "SEO-Ready for Search Visibility",
+        "Project Positioning That Sells",
+        "Branded to Match Your Resume + LinkedIn"
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "In today’s global hiring landscape, the candidates who win are those who stand out — and nothing sets you apart faster than a clean, well-designed personal website. It’s your story, your proof, and your brand. Make sure it’s working for you 24/7."
+    }
+  ]
+    },
+
+    {
+  slug: "no-interview-calls",
+  title: "The #1 Reason You’re Not Getting Interview Calls (It’s Not What You Think)",
+  subtitle: "You’re applying. You’re qualified. So why is your inbox still empty?",
+  imageUrl: "blogThumbnails/nojob.jpg",
+  content: [
+    {
+      type: "paragraph",
+      text: "You’ve updated your resume. You’re actively applying. Maybe even customized a few cover letters. But no matter how many jobs you apply for, the outcome feels the same — silence. No interview calls. No feedback. Just… nothing."
+    },
+    {
+      type: "paragraph",
+      text: "It’s frustrating — especially when you *know* you’re qualified. The real issue? Most candidates are focusing on what they think matters, instead of what actually gets attention from recruiters and hiring systems."
+    },
+    {
+      type: "heading",
+      text: "No, It’s Not About Experience"
+    },
+    {
+      type: "paragraph",
+      text: "One of the biggest myths in early-career job hunting is this: 'I’m not getting interviews because I don’t have enough experience.' In reality, a lack of experience is rarely the problem — especially for freshers, final-year students, or even recent grads. The problem is *how* you present yourself."
+    },
+    {
+      type: "paragraph",
+      text: "In today’s hiring landscape, most companies use Applicant Tracking Systems (ATS) and fast-paced recruiter workflows. That means your application has to beat two things: machines and skimming eyes."
+    },
+    {
+      type: "heading",
+      text: "The Real Reason: Generic, Unoptimized Applications"
+    },
+    {
+      type: "paragraph",
+      text: "If your resume isn’t built for ATS, it probably isn’t being seen at all. Even if it reaches a recruiter, it’s being skimmed in less than 10 seconds. That’s all the time you get to make a great first impression — or none at all."
+    },
+    {
+      type: "paragraph",
+      text: "Here’s the uncomfortable truth: a generic resume — even if accurate — won’t stand out. It has to *sell you* clearly, concisely, and strategically."
+    },
+    {
+      type: "heading",
+      text: "What Recruiters Are Actually Looking For"
+    },
+    {
+      type: "paragraph",
+      text: "Instead of guessing what might work, here’s what actually *does* work. These are the things that consistently catch attention:"
+    },
+    {
+      type: "list",
+      items: [
+        "**Relevant Keywords** – Words and phrases from the job description show alignment.",
+        "**Clean Formatting** – Resumes that are easy to read get more attention.",
+        "**Tailored Content** – Generic resumes feel lazy. Customized ones show you care.",
+        "**Proof of Results** – Recruiters love impact. Don’t just say what you did — say what happened.",
+        "**Brand Consistency** – Your resume, LinkedIn, and portfolio should tell the *same story*."
+      ]
+    },
+    {
+      type: "heading",
+      text: "How JobLynkr Fixes All of This — For You"
+    },
+    {
+      type: "paragraph",
+      text: "At JobLynkr, we’ve helped dozens of students and early-career professionals turn things around — not by changing who they are, but by improving how they show up on paper and online. We don’t just tweak resumes — we build strategic, interview-ready personal brands."
+    },
+    {
+      type: "list",
+      items: [
+        "✅ ATS-optimized resumes that actually pass filters",
+        "✅ Role-specific keyword mapping to maximize relevance",
+        "✅ Visually polished layouts that are easy to skim",
+        "✅ Aligned messaging across your resume, LinkedIn, and portfolio",
+        "✅ Personalized applications written and submitted *for you*"
+      ]
+    },
+    {
+      type: "heading",
+      text: "Stop Guessing. Start Getting Interview Calls."
+    },
+    {
+      type: "paragraph",
+      text: "It’s not about sending more applications — it’s about sending *better* ones. You don’t need more experience, you need better visibility. The right resume, the right positioning, and the right strategy will get you noticed — and finally get your inbox buzzing with interviews."
+    },
+    {
+      type: "paragraph",
+      text: "Let JobLynkr help you break the silence. We’ll do the heavy lifting — you just show up and shine."
+    }
+  ]
+    },
+
+    {
+  slug: "project-descriptions-guide",
+  title: "Project Descriptions on Resumes: A Guide for Freshers & Final-Year Students",
+  subtitle: "You may not have full-time work — but your projects can get you hired.",
+  imageUrl: "blogThumbnails/resume project.webp",
+  content: [
+    {
+      type: "paragraph",
+      text: "As a fresher or final-year student, you might worry your resume lacks “real experience.” But here’s the truth: your *projects* are your experience. Whether it’s a college assignment, internship project, or side hustle — the way you present your work can make or break your chances of getting shortlisted."
+    },
+    {
+      type: "heading",
+      text: "Why Projects Matter More Than You Think"
+    },
+    {
+      type: "paragraph",
+      text: "Recruiters hiring entry-level talent aren’t looking for job titles — they’re looking for proof of skill, initiative, and problem-solving. A well-written project section shows you’re capable, motivated, and already applying what you’ve learned."
+    },
+    {
+      type: "list",
+      items: [
+        "**Real-World Relevance** – Projects demonstrate how you apply theory to practice.",
+        "**Skill Visibility** – Show what tools, technologies, and frameworks you’ve mastered.",
+        "**Ownership** – Projects reflect initiative, even when done in a group setting.",
+        "**Differentiation** – Your project work can set you apart in a sea of similar-looking resumes."
+      ]
+    },
+    {
+      type: "heading",
+      text: "How to Write Project Descriptions That Impress"
+    },
+    {
+      type: "list",
+      items: [
+        "**Start with the Title** – Be clear and specific. Example: 'Real-Time Chat App using Node.js and Socket.io'",
+        "**Add Context** – 1 line about what the project is and why it was built.",
+        "**Showcase Tools** – Mention the technologies, libraries, or platforms used.",
+        "**Highlight Your Role** – What part did you work on? Backend? UI? Research?",
+        "**Include Outcomes** – Talk about results, metrics, or what was achieved.",
+        "**Keep It Concise** – 3–5 bullet points max. Focus on clarity and impact."
+      ]
+    },
+    {
+      type: "heading",
+      text: "Example Project Description (Good vs Great)"
+    },
+    {
+      type: "paragraph",
+      text: "**❌ Basic Version:**\nBuilt an e-commerce website using React.\n\n**✅ Optimized Version:**\n• Designed and developed a fully functional e-commerce web app using React, Firebase, and Stripe\n• Implemented cart functionality, real-time database integration, and secure payment gateway\n• Optimized performance with lazy loading and reusable components\n• Deployed on Netlify with custom domain support"
+    },
+    {
+      type: "heading",
+      text: "How JobLynkr Helps You Package Projects That Sell"
+    },
+    {
+      type: "paragraph",
+      text: "At JobLynkr, we help you turn academic and personal projects into powerful proof of capability. We rewrite your project descriptions for clarity, impact, and recruiter readability — and showcase them across your resume, LinkedIn, and portfolio website."
+    },
+    {
+      type: "list",
+      items: [
+        "✅ Project Positioning & Copywriting",
+        "✅ Resume & LinkedIn Integration",
+        "✅ Visual Project Showcases for Your Portfolio",
+        "✅ Storytelling Help: Problem → Tech → Impact"
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "You don’t need a job title to get hired — you need a clear story about the value you’ve already created. Your projects *are* your experience. Let’s make them shine."
+    }
+  ]
+    },
 ];
-

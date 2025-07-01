@@ -22,9 +22,9 @@ export const cardsTop = [
     },
     {
       src: '/board/portfoliowebsite.jpg',
-      alt: 'Portfolio Projects',
+      alt: 'Portfolio Website',
       title: 'Portfolio Projects',
-      desc: 'Real, custom projects built for your resume and LinkedIn — with full explanations.',
+      desc: 'We craft portfolio websites that highlight your skills and brand — making you stand out to recruiters and clients.',
       bg: 'bg-[#fdf6e4]',
     },
   ];
